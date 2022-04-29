@@ -403,6 +403,7 @@ def update_candlestick_graph(n_clicks, currency_string, what_to_show,
 
     # Return your updated text to currency-output, and the figure to
     #   candlestick-graph outputs
+
     return currency_string, fig
 
 # Callback for what to do when trade-button is pressed
@@ -423,7 +424,7 @@ def trade(n_clicks, action, trade_currency, trade_amt, host, port, clientid):
     # Still don't use n_clicks, but we need the dependency
 
     # Make the message that we want to send back to trade-output
-    msg = action + ' ' + trade_amt + ' ' + trade_currency
+    msg = str(action) + ' ' + str(trade_amt) + ' ' + str(trade_currency)
 
     order = Order()
     order.action = action
